@@ -1,6 +1,10 @@
 # Ransomware-GS
  Descrição do funcionamento do ransomware
+ 
+ 
 Esse ransomware foi feito para funcionar em windows.
+
+
  Primeiramente precisamos fazer os imports necessários 
  
  
