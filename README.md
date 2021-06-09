@@ -14,7 +14,9 @@ Após fazer os imports podemos começar a programar o código propriamente dito.
 Aqui nós estamos listando as extensões dos tipos de arquivos que queremos criptografar, e exibir a mensagem que estamos criptografando.
 
 lst_arqui = ['*.pdf', '*.txt', '*.jpg', '*.doc', ]
+
 print('Criptografando')
+
 time.sleep(3)
  
 Aqui estamos confirmando que os arquivos que tem que ser criptografados existem, nesse código eu escolhi criptografar os arquivos existentes no desktop.
