@@ -3,10 +3,18 @@
 Esse ransomware foi feito para funcionar em windows.
  Primeiramente precisamos fazer os imports necessários 
  
+ 
 import os  # sistema operacional
+
+
 import glob  # busca os arquivos
+
+
 import time
+
+
 import pyaes  # biblioteca de criptografia aes
+
  
 from pathlib import Path  # pathlib utilizada para setar os caminhos
 Após fazer os imports podemos começar a programar o código propriamente dito.
