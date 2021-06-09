@@ -1,3 +1,17 @@
+'''
+FIAP
+Defesa Cibernética - 1TDCF - 2021
+Development e Coding for Security
+Prof. Ms. Fábio H. Cabrini
+Atividade: Proposta da Global Solution 
+Alunos:
+Fernando De Souza – RM88717
+Gabriel Anselmo Pires Dos Santos - RM87010
+João Paulo Silva de Queiroz - RM86376
+Mateus Amado Monteiro da Silva - RM87974
+Tomás Esteves Andrade - RM89081
+'''
+
 import os  # sistema operacional
 import glob  # busca os arquivos
 import time
