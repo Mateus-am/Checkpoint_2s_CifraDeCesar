@@ -55,10 +55,8 @@ def descrypt(decrypt_file):
             akey = decryptf
             aaes = pyaes.AESModeOfOperationCTR(akey)  # gera a decriptografia
             decrypt_data = aaes.decrypt(data_arqui)
-
             format_file = arquivo.split('.')
             new_nome_arquivo = format_file[0] + '.' + format_file[1]
-
             dnovo_arquivo = open(f'{desktop}\\{new_nome_arquivo}', 'wb')
             dnovo_arquivo.write(decrypt_data)
             dnovo_arquivo.close()
