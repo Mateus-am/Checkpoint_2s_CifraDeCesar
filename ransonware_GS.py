@@ -26,7 +26,7 @@ try:
     desktop = Path.home() / "Desktop"
 except Exception:
     pass
-os.chdir(desktop)
+os.chdir(desktop)  #utilizado para definir o caminho que no caso é o desktop
 
 
 def criptografando():
