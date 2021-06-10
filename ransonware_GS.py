@@ -63,7 +63,7 @@ def descrypt(decrypt_file):
             dnovo_arquivo.write(decrypt_data)
             dnovo_arquivo.close()
     except ValueError as err:
-        print('Chave errada, que pena ;(')
+        print()
 
 
 if __name__ == '__main__':
