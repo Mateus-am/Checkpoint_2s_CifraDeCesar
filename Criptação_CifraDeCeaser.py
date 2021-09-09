@@ -55,4 +55,4 @@ key = int(input("Para descriptografar o arquivo insira a chave correta: "))
 if key == chave:
     decod(mensagem2, cod2)
 else:
-    print("Chave incorreta")
+    print("Chave incorreta - Arquivo Corrompido")
