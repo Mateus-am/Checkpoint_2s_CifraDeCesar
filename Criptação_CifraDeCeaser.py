@@ -50,7 +50,7 @@ def decod(mensagem2, cod2):
 encod(mensagem, cod)
 
 print("Arquivo Criptografrado")
-key = int(input("Para descriptografar o arquivo insira a chave correta: "))
+key = int(input("Para descriptografar o arquivo insira a chave correta (Tentativa Unica): "))
 
 if key == chave:
     decod(mensagem2, cod2)
